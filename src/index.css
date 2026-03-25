@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    overflow-x: hidden;
+  }
+}
+
+@layer utilities {
+  .font-cursive {
+    font-family: 'Dancing Script', cursive;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #1a5c2a;
+  border-radius: 3px;
+}
+
+/* Hero slide-up animation */
+@keyframes slideUpHero {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-animate {
+  animation: slideUpHero 0.75s ease forwards;
+}
+
+.hero-animate-delay-1 {
+  animation: slideUpHero 0.75s 0.2s ease both;
+}
+
+.hero-animate-delay-2 {
+  animation: slideUpHero 0.75s 0.4s ease both;
+}
+
+/* Progress bar fill */
+@keyframes fillBar {
+  from { width: 0%; }
+}
+
+/* Fade in up for sections */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.7s ease forwards;
+}
